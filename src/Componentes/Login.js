@@ -1,5 +1,9 @@
 import React from "react";
 import { Form, Input, Button } from "antd";
+import env from "react-dotenv";
+
+const API_REACT_URL = env.API_REACT_URL;
+
 const layout = {
   labelCol: {
     span: 8,
@@ -8,8 +12,6 @@ const layout = {
     span: 4,
   },
 };
-
-const API_REACT_URL = process.env.API_REACT_URL;
 
 const Login = () => {
   const onFinish = (values) => {

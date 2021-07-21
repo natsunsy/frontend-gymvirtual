@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Form, Input, Tooltip, Checkbox, Button } from "antd";
 import { QuestionCircleOutlined } from "@ant-design/icons";
+import env from "react-dotenv";
+
+const API_REACT_URL = env.API_REACT_URL;
 
 const formItemLayout = {
   labelCol: {
@@ -32,8 +35,6 @@ const tailFormItemLayout = {
     },
   },
 };
-
-const API_REACT_URL = process.env.API_REACT_URL;
 
 const Registration = () => {
   const onFinish = (values) => {

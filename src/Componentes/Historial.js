@@ -3,11 +3,11 @@ import React, { useState, useEffect } from "react";
 import "antd/dist/antd.css";
 import { Calendar } from "antd";
 import Footer from "./Footer";
-//import Registro from "./Registro_logros"
 import { Modal } from "antd";
 import Titulo from "./Titulo";
+import env from "react-dotenv";
 
-const API_REACT_URL = process.env.API_REACT_URL;
+const API_REACT_URL = env.API_REACT_URL;
 
 function onPanelChange(value, mode) {
   console.log(value, mode);

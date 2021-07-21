@@ -9,7 +9,7 @@ import trofeo from '../images/trofeo.png';
 function Logros() {
     let usuariobj = localStorage.getItem("usuario");
     if (!usuariobj) {
-        window.location.href = "/login";
+        window.location.replace = "/login";
     }
     let usuario = JSON.parse(usuariobj);
     return (

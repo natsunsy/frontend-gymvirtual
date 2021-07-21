@@ -5,8 +5,9 @@ import Usuario from "./Usuario.js";
 import Titulo from "./Titulo.js";
 import Footer from "./Footer.js";
 import { orderBy } from "lodash";
+import env from "react-dotenv";
 
-const API_REACT_URL = process.env.API_REACT_URL;
+const API_REACT_URL = env.API_REACT_URL;
 
 function Ranking() {
   let usuariobj = localStorage.getItem("usuario");

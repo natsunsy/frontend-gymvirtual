@@ -10,7 +10,7 @@ const FotoPerfil = (props) => {
 
   let usuariobj = localStorage.getItem("usuario");
   if (!usuariobj) {
-    window.location.href = "/login";
+    window.location.replace = "/login";
   }
 
   return (

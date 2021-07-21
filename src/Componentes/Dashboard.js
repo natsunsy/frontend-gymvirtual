@@ -13,7 +13,7 @@ import Titulo from "./Titulo";
 function Dashboard() {
   let usuariobj = localStorage.getItem("usuario");
   if (!usuariobj) {
-    window.location.href = "/login";
+    window.location.replace = "/login";
   }
 
   const commands = [
@@ -82,7 +82,7 @@ function Dashboard() {
   
   if (transcript === nombres[4]) {
     localStorage.clear();
-    window.location.href = "/login";
+    window.location.replace = "/login";
   }
 
   const handleListing = () => {

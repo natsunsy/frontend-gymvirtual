@@ -11,8 +11,9 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 import { AudioFilled } from "@ant-design/icons";
+import env from "react-dotenv";
 
-const API_REACT_URL = process.env.API_REACT_URL;
+const API_REACT_URL = env.API_REACT_URL;
 
 function Basico() {
   let userobj = localStorage.getItem("usuario");
@@ -92,7 +93,7 @@ function Basico() {
       command: "gymvirtual *",
       callback: (website) => {
         //window.open("http://" + website.split(" ").join(""));
-        window.location.replace(`${APP_URL}/Piernas/Niveles`);
+        window.location.href(`/Piernas/Niveles`);
       },
     },
     {

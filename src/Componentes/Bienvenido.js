@@ -4,7 +4,7 @@ import "antd/dist/antd.css";
 import imagen from "../images/triceps.jpg";
 import titulo from "../images/titulo.png";
 import { AudioFilled } from "@ant-design/icons";
-
+import { Link } from "react-router-dom";
 import { useRef, useState } from "react";
 import SpeechRecognition, {
   useSpeechRecognition,
@@ -16,7 +16,7 @@ function Bienvenido() {
       command: "gymvirtual *",
       callback: (website) => {
         //window.open("http://" + website.split(" ").join(""));
-        window.location.href(`/Piernas/Niveles`);
+        window.location.replace(`/Piernas/Niveles`);
       },
     },
     {
@@ -47,7 +47,7 @@ function Bienvenido() {
   let nombres = ["comenzar"];
 
   if (transcript === nombres[0]) {
-    window.location.href(`/login`);
+    window.location.replace(`/login`);
   }
 
   const handleListing = () => {
@@ -56,10 +56,6 @@ function Bienvenido() {
     SpeechRecognition.startListening({
       continuous: true,
     });
-  };
-
-  const VeLogin = () => {
-    window.location.href(`/login`);
   };
 
   const stopHandle = () => {
@@ -98,9 +94,11 @@ function Bienvenido() {
       </div>
       <br/>
       <div>
-        <button type="button" class="btn btn-outline-primary" onClick={VeLogin}>
-          COMENZAR
-        </button>
+        <Link to={'/login'}>
+          <button type="button" class="btn btn-outline-primary">
+            COMENZAR
+          </button>
+        </Link>
       </div>
     </div>
   );

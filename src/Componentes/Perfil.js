@@ -6,14 +6,15 @@ import Datos from "./Datos";
 import "antd/dist/antd.css";
 import Footer from "./Footer";
 import Titulo from "./Titulo";
-const crypto = require("crypto");
+import env from "react-dotenv";
 
-const API_REACT_URL = process.env.API_REACT_URL;
+const crypto = require("crypto");
+const API_REACT_URL = env.API_REACT_URL;
 
 function Perfil() {
   let usuariobj = localStorage.getItem("usuario");
   if (!usuariobj) {
-    window.location.href = "/login";
+    window.location.replace = "/login";
   }
   let usuario = JSON.parse(usuariobj);
   let salt = "f844b09ff50c";

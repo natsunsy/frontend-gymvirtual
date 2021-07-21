@@ -14,7 +14,7 @@ function Niveles() {
   let match = useParams();
   let usuariobj = localStorage.getItem("usuario");
   if (!usuariobj) {
-    window.location.href = "/login";
+    window.location.replace = "/login";
   }
 
   const commands = [
@@ -47,18 +47,18 @@ function Niveles() {
 
  
   if (transcript === nombres[0]) {
-    window.location.href(`/${match.nameCategory}/Básico/Seleccion`);
+    window.location.replace(`/${match.nameCategory}/Básico/Seleccion`);
   }
 
   if (transcript === nombres[1]) {
-    window.location.href(`/${match.nameCategory}/Intermedio/Seleccion`);
+    window.location.replace(`/${match.nameCategory}/Intermedio/Seleccion`);
   }
 
   if (transcript === nombres[2]) {
-    window.location.href(`/${match.nameCategory}/Avanzado/Seleccion`);
+    window.location.replace(`/${match.nameCategory}/Avanzado/Seleccion`);
   }
   if (transcript === nombres[3]) {
-    window.location.href("/dashboard");
+    window.location.replace("/dashboard");
   }
 
   const handleListing = () => {
