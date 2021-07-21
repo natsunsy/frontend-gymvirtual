@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { Form, Input, Tooltip, Checkbox, Button } from "antd";
 import { QuestionCircleOutlined } from "@ant-design/icons";
-import env from "react-dotenv";
-
-const API_REACT_URL = env.API_REACT_URL;
+const API_REACT_URL = "https://app-gymvirtual.herokuapp.com";
 
 const formItemLayout = {
   labelCol: {

@@ -6,10 +6,9 @@ import Datos from "./Datos";
 import "antd/dist/antd.css";
 import Footer from "./Footer";
 import Titulo from "./Titulo";
-import env from "react-dotenv";
 
 const crypto = require("crypto");
-const API_REACT_URL = env.API_REACT_URL;
+const API_REACT_URL = "https://app-gymvirtual.herokuapp.com";
 
 function Perfil() {
   let usuariobj = localStorage.getItem("usuario");

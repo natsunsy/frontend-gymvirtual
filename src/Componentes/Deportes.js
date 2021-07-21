@@ -1,8 +1,7 @@
 import React , { useState, useEffect}from "react";
 import Deporte from "./Deporte";
-import env from "react-dotenv";
 
-const API_REACT_URL = env.API_REACT_URL;
+const API_REACT_URL = "https://app-gymvirtual.herokuapp.com";
 
 const Deportes = () => {
 

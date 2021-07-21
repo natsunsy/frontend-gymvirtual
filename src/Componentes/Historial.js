@@ -5,9 +5,7 @@ import { Calendar } from "antd";
 import Footer from "./Footer";
 import { Modal } from "antd";
 import Titulo from "./Titulo";
-import env from "react-dotenv";
-
-const API_REACT_URL = env.API_REACT_URL;
+const API_REACT_URL = "https://app-gymvirtual.herokuapp.com";
 
 function onPanelChange(value, mode) {
   console.log(value, mode);

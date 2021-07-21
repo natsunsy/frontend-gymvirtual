@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import env from "react-dotenv";
-
 import Footer from "./Footer";
 import "./Style/Primer_basico.css";
 import "./Style/Basico.css";
-
+import { useParams } from "react-router-dom";
 import Titulo from "./Titulo"
+
 import { Modal } from "antd";
 import CancelIcon from '@material-ui/icons/Cancel';
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 import RestoreIcon from '@material-ui/icons/Restore';
+const API_REACT_URL = "https://app-gymvirtual.herokuapp.com";
 
-const API_REACT_URL = env.API_REACT_URL;
 
 const Primer_Basico = () => {
   let userobj = localStorage.getItem("usuario");
@@ -20,19 +18,23 @@ const Primer_Basico = () => {
   
   if (!userobj) {
     window.location.replace = "/login";
+  }
 
   let usuario = JSON.parse(userobj);
   let rutina = JSON.parse(routineobj);
 
   const coins = rutina.ganancia;
   const len = rutina.tamaño;
+  
+  const [ex, setEx] = useState(null);
+  const [item, setItem] = useState(null);
 
   let match = useParams();
   const id = match.idRoutine;
   const i = match.idExercise;
   
-  const [ex, setEx] = useState(null);
- 
+  console.log(id, i);
+
   useEffect(() => {
     return fetch(`${API_REACT_URL}/api/routine/${id}`, {
       crossDomain: true,
@@ -46,9 +48,7 @@ const Primer_Basico = () => {
         }
       })
       .catch((error) => console.log(error));
-  }, [id, setEx]);
-
-  const [item, setItem] = useState(null);
+  }, [id]);
 
   useEffect(() => {
     if (ex !== null) {
@@ -251,5 +251,5 @@ function updateUser(idUsuario, usuario) {
     </div>
   );
 };
-}
+
 export default Primer_Basico;
