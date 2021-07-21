@@ -3,8 +3,10 @@ import React, { useState, useEffect } from "react";
 import "antd/dist/antd.css";
 import { Calendar } from "antd";
 import Footer from "./Footer";
+//import Registro from "./Registro_logros"
 import { Modal } from "antd";
 import Titulo from "./Titulo";
+
 const API_REACT_URL = "https://app-gymvirtual.herokuapp.com";
 
 function onPanelChange(value, mode) {
@@ -88,20 +90,21 @@ function Historial() {
         visible={isModalVisible}
         onOk={handleOk}
         onCancel={handleCancel}
-        className="modal"
       >
         <div className="logros">
-        {routines && routines.length ? 0 : 
-          <h3>No tuviste rutinas este día.</h3>
-        }
-        {routines && routines.map( routine => (
+        {routines && routines.length ? routines.map( routine => (
           routine.exercises.map( exercise => (
             <div className="exer" key= {exercise._id}>
-              <h2>{exercise.tittle}</h2>
-              <h3>{exercise.time} s</h3>
+              <h5>{exercise.tittle}</h5>
+              <div className="content-flex">
+                <h6>{exercise.time}s</h6>
+                <p>{convert(routine.createdAt)}</p>
+              </div>
             </div>
           ))
-      ))}
+      )): 
+          <h4>No tuviste rutinas este día.</h4>
+        }
 
         </div>
       </Modal>
