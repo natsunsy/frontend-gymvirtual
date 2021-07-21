@@ -12,6 +12,8 @@ import SpeechRecognition, {
 } from "react-speech-recognition";
 import { AudioFilled } from "@ant-design/icons";
 
+const API_REACT_URL = process.env.API_REACT_URL;
+
 function Basico() {
   let userobj = localStorage.getItem("usuario");
   if (!userobj) {
@@ -28,7 +30,7 @@ function Basico() {
   useEffect(() => {
     if (ejercicios === null || random === 1) {
       return fetch(
-        `http://localhost:4000/api/exercise/exercises/${match.nameCategory}/${match.level}`,
+        `${API_REACT_URL}/api/exercise/exercises/${match.nameCategory}/${match.level}`,
         {
           crossDomain: true,
           method: "GET",
@@ -57,7 +59,7 @@ function Basico() {
     const len = ejercicios.length - 1;
 
     try {
-      const response = await fetch(`http://localhost:4000/api/routine/createroutine`, {
+      const response = await fetch(`${API_REACT_URL}/api/routine/createroutine`, {
         crossDomain: true,
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -90,7 +92,7 @@ function Basico() {
       command: "gymvirtual *",
       callback: (website) => {
         //window.open("http://" + website.split(" ").join(""));
-        window.location.replace("http://localhost:3000/Piernas/Niveles");
+        window.location.replace(`${APP_URL}/Piernas/Niveles`);
       },
     },
     {

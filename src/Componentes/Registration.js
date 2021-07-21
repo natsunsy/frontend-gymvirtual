@@ -33,10 +33,12 @@ const tailFormItemLayout = {
   },
 };
 
+const API_REACT_URL = process.env.API_REACT_URL;
+
 const Registration = () => {
   const onFinish = (values) => {
     console.log(values);
-    return fetch(`http://localhost:4000/api/auth/signup`, {
+    return fetch(`${API_REACT_URL}/api/auth/signup`, {
       crossDomain: true,
       method: "POST",
       headers: { "Content-Type": "application/json" },

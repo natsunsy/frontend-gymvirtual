@@ -7,6 +7,11 @@ import diasRacha from '../images/diasRacha.png';
 import trofeo from '../images/trofeo.png';
 
 function Logros() {
+    let usuariobj = localStorage.getItem("usuario");
+    if (!usuariobj) {
+        window.location.href = "/login";
+    }
+    let usuario = JSON.parse(usuariobj);
     return (
         <div>
             <Titulo />
@@ -15,15 +20,9 @@ function Logros() {
                 MIS LOGROS
             </div>
 
-            <div className="racha">
-                <img src={diasRacha} alt=""/>
-                <div className="días">3</div>
-                <div className="descripción">DÍAS EN RACHA</div>
-            </div>
-
             <div className="coins-logros">
                 <img src={moneda} alt=""/>  
-                <div className="días">190</div>
+                <div className="días">{usuario.coins}</div>
                 <div className="descripción">COINS</div>
             </div>
 

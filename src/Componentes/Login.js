@@ -9,11 +9,12 @@ const layout = {
   },
 };
 
+const API_REACT_URL = process.env.API_REACT_URL;
 
 const Login = () => {
   const onFinish = (values) => {
     console.log(values);
-    return fetch(`http://localhost:4000/api/auth/signin`, {
+    return fetch(`${API_REACT_URL}/api/auth/signin`, {
       crossDomain: true,
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -100,7 +101,7 @@ const Login = () => {
       <div>
         <br />
         <button type="button" class="btn btn-outline-light">
-          <a href="http://localhost:3000/">HOME</a>
+          <a href="/">HOME</a>
         </button>
       </div>
     </div>

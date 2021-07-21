@@ -6,6 +6,8 @@ import Titulo from "./Titulo.js";
 import Footer from "./Footer.js";
 import { orderBy } from "lodash";
 
+const API_REACT_URL = process.env.API_REACT_URL;
+
 function Ranking() {
   let usuariobj = localStorage.getItem("usuario");
   if (!usuariobj) {
@@ -16,7 +18,7 @@ function Ranking() {
 
   useEffect(() => {
     if (Users === null) {
-      return fetch(`http://localhost:4000/api/auth/usuarios`, {
+      return fetch(`${API_REACT_URL}/api/auth/usuarios`, {
         crossDomain: true,
         method: "GET",
         headers: { "Content-Type": "application/json" },

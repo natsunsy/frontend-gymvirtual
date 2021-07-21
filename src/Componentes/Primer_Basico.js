@@ -10,6 +10,8 @@ import CancelIcon from '@material-ui/icons/Cancel';
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 import RestoreIcon from '@material-ui/icons/Restore';
 
+const API_REACT_URL = process.env.API_REACT_URL;
+
 const Primer_Basico = () => {
   let userobj = localStorage.getItem("usuario");
   let routineobj = localStorage.getItem("rutina");
@@ -34,7 +36,7 @@ const Primer_Basico = () => {
   console.log(id, i);
 
   useEffect(() => {
-    return fetch(`http://localhost:4000/api/routine/${id}`, {
+    return fetch(`${API_REACT_URL}/api/routine/${id}`, {
       crossDomain: true,
       method: "GET",
       headers: { "Content-Type": "application/json" },
@@ -50,7 +52,7 @@ const Primer_Basico = () => {
 
   useEffect(() => {
     if (ex !== null) {
-      return fetch(`http://localhost:4000/api/exercise/${ex.exerciseIds[i]}`, {
+      return fetch(`${API_REACT_URL}/api/exercise/${ex.exerciseIds[i]}`, {
         crossDomain: true,
         method: "GET",
         headers: { "Content-Type": "application/json" },
@@ -187,7 +189,7 @@ const final = () => {
 }
 
 function updateUser(idUsuario, usuario) {
-  return fetch(`http://localhost:4000/api/auth/updUsuario/${idUsuario}`, {
+  return fetch(`${API_REACT_URL}/api/auth/updUsuario/${idUsuario}`, {
     crossDomain: true,
     method: "PUT",
     headers: { "Content-Type": "application/json" },

@@ -6,6 +6,8 @@ import HomeIcon from "@material-ui/icons/Home";
 import StarIcon from "@material-ui/icons/Star";
 import TurnedInNotIcon from "@material-ui/icons/TurnedInNot";
 import { Link } from "react-router-dom";
+
+
 function Footer() {
   return (
     <div className="footerIcons">

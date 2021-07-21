@@ -7,6 +7,8 @@ import Footer from "./Footer";
 import { Modal } from "antd";
 import Titulo from "./Titulo";
 
+const API_REACT_URL = process.env.API_REACT_URL;
+
 function onPanelChange(value, mode) {
   console.log(value, mode);
 }
@@ -24,7 +26,7 @@ function Historial() {
   const [routines, setRoutines] = useState(null);
 
   useEffect(() => {
-      return fetch(`http://localhost:4000/api/routine/routines/${user._id}`, {
+      return fetch(`${API_REACT_URL}/api/routine/routines/${user._id}`, {
         crossDomain: true,
         method: "GET",
         headers: { "Content-Type": "application/json" },

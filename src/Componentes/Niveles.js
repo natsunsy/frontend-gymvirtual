@@ -43,25 +43,22 @@ function Niveles() {
     );
   }
 
-  let nombres = ["nivel básico", "nivel intermedio", "nivel avanzado", "personalizado", "regresar"];
+  let nombres = ["nivel básico", "nivel intermedio", "nivel avanzado",  "regresar"];
 
  
   if (transcript === nombres[0]) {
-    window.location.replace(`http://localhost:3000/${match.nameCategory}/Básico/Seleccion`);
+    window.location.href(`/${match.nameCategory}/Básico/Seleccion`);
   }
 
   if (transcript === nombres[1]) {
-    window.location.replace(`http://localhost:3000/${match.nameCategory}/Intermedio/Seleccion`);
+    window.location.href(`/${match.nameCategory}/Intermedio/Seleccion`);
   }
 
   if (transcript === nombres[2]) {
-    window.location.replace(`http://localhost:3000/${match.nameCategory}/Avanzado/Seleccion`);
+    window.location.href(`/${match.nameCategory}/Avanzado/Seleccion`);
   }
   if (transcript === nombres[3]) {
-    window.location.replace("http://localhost:3000/basico");
-  }
-  if (transcript === nombres[4]) {
-    window.location.replace("http://localhost:3000/dashboard");
+    window.location.href("/dashboard");
   }
 
   const handleListing = () => {

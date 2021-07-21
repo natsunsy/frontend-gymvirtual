@@ -10,8 +10,6 @@ import "./Style/prueba.css";
 import { AudioFilled } from "@ant-design/icons";
 import Titulo from "./Titulo";
 
-
-
 function Dashboard() {
   let usuariobj = localStorage.getItem("usuario");
   if (!usuariobj) {
@@ -23,7 +21,7 @@ function Dashboard() {
       command: "gymvirtual *",
       callback: (website) => {
         //window.open("http://" + website.split(" ").join(""));
-        window.location.replace("http://localhost:3000/Piernas/Niveles");
+        window.location.replace("/Piernas/Niveles");
       },
     },
     {
@@ -50,14 +48,6 @@ function Dashboard() {
   const microphoneRef = useRef(null);
 
 
-
-  /*useEffect(() => {
-    
-  }, [transcript,nombres]);*/
-
-
-
-
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
     return (
       <div className="mircophone-container">
@@ -75,19 +65,19 @@ function Dashboard() {
   ];
 
   if (transcript === nombres[0]) {
-    window.location.replace("http://localhost:3000/Piernas/Niveles");
+    window.location.replace("/Piernas/Niveles");
   }
 
   if (transcript === nombres[1]) {
-    window.location.replace("http://localhost:3000/Tríceps/Niveles");
+    window.location.replace("/Tríceps/Niveles");
   }
 
   if (transcript === nombres[2]) {
-    window.location.replace("http://localhost:3000/Abdominales/Niveles");
+    window.location.replace("/Abdominales/Niveles");
   }
 
   if (transcript === nombres[3]) {
-    window.location.replace("http://localhost:3000/perfil");
+    window.location.replace("/perfil");
   }
   
   if (transcript === nombres[4]) {
@@ -142,30 +132,3 @@ function Dashboard() {
 }
 
 export default Dashboard;
-
-
-/*<div>
-        <div>
-          <button
-            className="microphone-icon-container"
-            ref={microphoneRef}
-            onClick={handleListing}
-          >
-            <AudioFilled />
-          </button>
-        </div>
-      </div>
-      <br />
-      <br />
-      <br />
-      <br />
-      {isListening && <button onClick={stopHandle}>Stop</button>}
-
-      {transcript && (
-        <div className="microphone-result-container">
-          <div className="microphone-result-text">
-            <p>{transcript}</p>
-          </div>
-        </div>
-      )}
-*/

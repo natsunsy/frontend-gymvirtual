@@ -16,7 +16,7 @@ function Bienvenido() {
       command: "gymvirtual *",
       callback: (website) => {
         //window.open("http://" + website.split(" ").join(""));
-        window.location.replace("http://localhost:3000/Piernas/Niveles");
+        window.location.href(`/Piernas/Niveles`);
       },
     },
     {
@@ -47,7 +47,7 @@ function Bienvenido() {
   let nombres = ["comenzar"];
 
   if (transcript === nombres[0]) {
-    window.location.replace("http://localhost:3000/login");
+    window.location.href(`/login`);
   }
 
   const handleListing = () => {
@@ -59,7 +59,7 @@ function Bienvenido() {
   };
 
   const VeLogin = () => {
-    window.location.replace("http://localhost:3000/login");
+    window.location.href(`/login`);
   };
 
   const stopHandle = () => {

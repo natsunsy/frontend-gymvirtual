@@ -1,6 +1,8 @@
 import React , { useState, useEffect}from "react";
 import Deporte from "./Deporte";
 
+const API_REACT_URL = process.env.API_REACT_URL;
+
 const Deportes = () => {
 
   const [deportes, setDeportes] = useState(null);
@@ -8,7 +10,7 @@ const Deportes = () => {
   useEffect(() => {
 
     if(deportes === null){
-      return fetch(`http://localhost:4000/api/category/categories`, {
+      return fetch(`${API_REACT_URL}/api/category/categories`, {
         crossDomain: true,
         method: "GET",
         headers: { "Content-Type": "application/json" },

@@ -8,6 +8,8 @@ import Footer from "./Footer";
 import Titulo from "./Titulo";
 const crypto = require("crypto");
 
+const API_REACT_URL = process.env.API_REACT_URL;
+
 function Perfil() {
   let usuariobj = localStorage.getItem("usuario");
   if (!usuariobj) {
@@ -21,7 +23,7 @@ function Perfil() {
   }
 
   function updateUser(idUsuario, usuario) {
-    return fetch(`http://localhost:4000/api/auth/updUsuario/${idUsuario}`, {
+    return fetch(`${API_REACT_URL}/api/auth/updUsuario/${idUsuario}`, {
       crossDomain: true,
       method: "PUT",
       headers: { "Content-Type": "application/json" },
